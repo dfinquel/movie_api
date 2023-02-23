@@ -1,5 +1,12 @@
 const express = require('express');
+
+/*Below, imported morgan locally.*/
+const morgan = require('morgan');
+
 const app = express();
+
+/*Below, passed morgan into the app.use function, specifying that requests should be logged using Morgan’s “common” format.*/
+app.use(morgan('common'));
 
 /*Below, used express.static to serve the “documentation.html” file from the public folder.*/
 app.use(express.static('public'));
