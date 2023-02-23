@@ -1,3 +1,5 @@
+//SET UP VARIABLES AND IMPORT MODULES
+
 /*Below, imported Express locally.*/
 const express = require('express');
 
@@ -11,6 +13,9 @@ const app = express();
 fs = require('fs');
 path = require('path');
 
+
+
+//MIDDLEWARE FUNCTIONS
 
 /*Below, passed morgan into the app.use function, specifying that requests should be logged using Morgan’s “common” format.*/
 app.use(morgan('common'));
@@ -33,6 +38,10 @@ app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Something went wrong!');
 });
+
+
+
+// LISTEN FUNCTION FOR REQUESTS ON PORT 8080
 
 /*Below, added function to listen for requests on port 8080.*/
 app.listen(8080, () => {
