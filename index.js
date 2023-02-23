@@ -1,9 +1,12 @@
+/*Below, imported Express locally.*/
 const express = require('express');
 
 /*Below, imported morgan locally.*/
 const morgan = require('morgan');
 
+/*Below, declared the variable "app" to encapsulate Express’s functionality.*/
 const app = express();
+
 
 /*Below, passed morgan into the app.use function, specifying that requests should be logged using Morgan’s “common” format.*/
 app.use(morgan('common'));
