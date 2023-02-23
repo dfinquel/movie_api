@@ -24,6 +24,12 @@ app.get('/movies', (req, res) => {
     res.json(topMovies);
 });
 
+/*Below, created an error-handling middleware function that logs all application-level errors to the terminal. This must be the last piece of the middleware chain.*/
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something went wrong!');
+});
+
 /*Below, added function to listen for requests on port 8080.*/
 app.listen(8080, () => {
     console.log('The myFlix app is listening on port 8080.');
